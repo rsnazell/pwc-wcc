@@ -4,9 +4,19 @@ This responsive, screen-reader friendly app renders the current weather and week
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It uses TypeScript, Material UI, Styled Components, Jest, React Testing Library.
 
-Weather data is sourced from [OpenWeatherMap](https://openweathermap.org/).
+Weather data is sourced from [OpenWeatherMap](https://openweathermap.org/). To limit unnecessary API calls, caching has been implemented using sessionStorage. Maximum cache time is 60 mins.
 
-## Todo
+## Getting Started
+
+To run the application locally, git clone the repository and run the following commands:
+
+```
+cd pwc-wcc
+npm install
+npm start
+```
+
+## Todo / Roadmap
 
 - request users' current location using Web Geolocation API and prepopulate location input
 - combine location lookup / get weather data into single API call
