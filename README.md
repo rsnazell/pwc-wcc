@@ -1,4 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## PWC Coding Challenge
+
+This responsive, screen-reader friendly app renders the current weather and weekly forecast for a given location. Users can input a new location and change between metric/imperial units.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It uses TypeScript, Material UI, Styled Components, Jest, React Testing Library.
+
+Weather data is sourced from [OpenWeatherMap](https://openweathermap.org/).
+
+## Todo
+
+- request users' current location using Web Geolocation API and prepopulate location input
+- combine location lookup / get weather data into single API call
+- some desired attributes not currently available from chosen API (precipitation, pollen count)
+- update manifest.json
+- move APPID from /src to local .env / server variable
+- deploy to production
 
 ## Available Scripts
 
