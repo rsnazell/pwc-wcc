@@ -15,7 +15,7 @@ To run the application locally, first obtain an APPID key from [OpenWeatherMap](
 ```
 cd pwc-wcc
 npm install
-echo 'REACT_APP_OWM_ID=*REPLACE_WITH_APPID*' > .env.local
+echo 'REACT_APP_OWM_ID=REPLACE_WITH_APPID' > .env.local
 npm start
 ```
 
