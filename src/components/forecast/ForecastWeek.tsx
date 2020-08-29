@@ -3,7 +3,7 @@ import { Box, Typography, useMediaQuery } from "@material-ui/core";
 import hash from "object-hash";
 import dayjs from "../../services/dayjs";
 import { GeoCoordinates, MeasurementUnit, OneCallAPIResponse } from "../weather/Weather.types";
-import { APPID } from "../weather/Weather.constants";
+import { OWM_URL } from "../weather/Weather.constants";
 
 interface Props {
   coordinates: GeoCoordinates | null;
@@ -34,8 +34,9 @@ const ForecastWeek: React.FC<Props> = ({ coordinates, units }) => {
       if (cached) {
         setData(JSON.parse(cached));
       } else {
+        const url = process.env.NODE_ENV === "development" ? "" : OWM_URL;
         const response = await fetch(
-          `/data/2.5/onecall?lat=${coordinates?.lat}&lon=${coordinates?.lon}&units=${units}&exclude=current,minutely,hourly&APPID=${APPID}`
+          `${url}/data/2.5/onecall?lat=${coordinates?.lat}&lon=${coordinates?.lon}&units=${units}&exclude=current,minutely,hourly&APPID=${process.env.REACT_APP_OWM_ID}`
         );
         if (!response.ok) {
           throw new Error(`${response.status} ${response.statusText}`);

@@ -10,7 +10,7 @@ import {
 } from "../weather/Weather.types";
 import { getWindSpeed } from "../weather/Weather.utils";
 import { ForecastDayDetail } from "./ForecastDayDetail";
-import { APPID, UNITS } from "../weather/Weather.constants";
+import { OWM_URL, UNITS } from "../weather/Weather.constants";
 
 interface Props {
   location: string;
@@ -51,8 +51,9 @@ const ForecastDay: React.FC<Props> = ({ location, units, setCoordinates }) => {
       if (cached) {
         setWeatherData(JSON.parse(cached));
       } else {
+        const url = process.env.NODE_ENV === "development" ? "" : OWM_URL;
         const response = await fetch(
-          `/data/2.5/weather?q=${location}&units=${units}&APPID=${APPID}`
+          `${url}/data/2.5/weather?q=${location}&units=${units}&APPID=${process.env.REACT_APP_OWM_ID}`
         );
         if (!response.ok) {
           throw new Error(`${response.status} ${response.statusText}`);
