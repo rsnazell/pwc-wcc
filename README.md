@@ -4,7 +4,7 @@ This responsive, screen-reader friendly app renders the current weather and week
 
 https://pwc-wcc.netlify.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It uses TypeScript, Material UI, Styled Components, Jest, React Testing Library.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It uses React, TypeScript, Material UI, Styled Components, Jest, React Testing Library.
 
 Weather data is sourced from [OpenWeatherMap](https://openweathermap.org/). To limit unnecessary API calls, caching has been implemented using sessionStorage. Maximum cache time is 60 mins.
 
@@ -24,6 +24,8 @@ npm start
 - request users' current location using Web Geolocation API and prepopulate location input
 - combine location lookup / get weather data into single API call
 - some desired attributes not currently available from chosen API (precipitation, pollen count)
+- add country flag icon next to location name to clarify origin eg Melbourne/US, Melbourne/AU
+- add helper text below input: Enter location eg "London", "London, UK"
 - update manifest.json
 
 ## Available Scripts
